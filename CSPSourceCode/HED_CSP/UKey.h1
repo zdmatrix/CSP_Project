@@ -1,0 +1,42 @@
+#pragma once
+
+
+void SetUkeyLastErr(DWORD dwErr);
+
+DWORD GetUkeyLastErr(void);
+
+//打开UKey
+BOOL UKeyOpen(HANDLE *hUKey);
+	
+//关闭UKey
+BOOL UKeyClose(HANDLE hUKey);
+
+//验证UKey 的pin 含密码输入框,
+BOOL UKeyVerifyPIN(HANDLE hUKey, const char *Pin, const short PinLen);
+BOOL UKeyCheckPIN(HANDLE hUKey);
+BOOL UKeyChangePINToUkey(HANDLE hUKey, const char *Pin, const short PinLen);
+BOOL UKeyChangePIN(HANDLE hUKey);
+//去随机数
+BOOL UKeyGetChallange(HANDLE hUKey, unsigned char *Challange, const short Len);
+
+BOOL UKeyGetContainer(HANDLE hUKey,BYTE *pbContainer,BYTE *pstrCardCt);
+BOOL UKeyGetCspContainerCount(HANDLE hUKey,WORD *wCount);
+BOOL UKeyFindContainer(HANDLE hUKey,BYTE *pbContainer);
+BOOL UKeyDelContainer(HANDLE hUKey,BYTE *pbContainer);
+BOOL UKeyAddContainer(HANDLE hUKey,BYTE *strCardCt);
+BOOL UKeyGenKey(HANDLE hUKey, WORD wKeyPSfi, WORD wKeySSfi);
+BOOL UKeyGetKey(HANDLE hUKey, DWORD sfi, unsigned char KeyFlag, unsigned char *Key);
+BOOL UKeyRSAEncrypt(HANDLE hUKey, DWORD sfi, unsigned char *InData, int *InDataLen, 
+					unsigned char *OutData, int *OutDataLen);
+BOOL UKeyRSADecrypt(HANDLE hUKey, DWORD sfi, unsigned char *InData, int *InDataLen, 
+					unsigned char *OutData, int *OutDataLen);
+BOOL UKeyRSASignature(HANDLE hUKey, DWORD sfi, unsigned char *InData, int InDataLen, 
+					unsigned char *OutData, int *OutDataLen);
+BOOL UKeyRSASignatureVerify(HANDLE hUKey, DWORD sfi, const unsigned char *InData, int InDataLen, 
+					unsigned char *OutData, int *OutDataLen);
+//证书相关
+BOOL UKeyGetNameFromCN(char *cn,char *name);
+BOOL UKeyGetCertName(BYTE *pbData, DWORD dwLen, char *pcOutName);
+BOOL UKeyAppendCert(HANDLE hUKey, BYTE *pstrCardCt, BYTE *pbData, DWORD dwLen);
+BOOL UKeyGetCert(HANDLE hUKey, BYTE *pstrCardCt, BYTE *pbData, DWORD dwLen);
+BOOL UKeyImportKey(HANDLE hUKey, DWORD sfi, unsigned char *Key);

@@ -1,0 +1,60 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: HED_CSP - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\anshj\LOCALS~1\Temp\RSP173.tmp" with contents
+[
+/nologo /MTd /W3 /Gm /GX /ZI /Od /I "C:\Include" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_WINDLL" /D "_MBCS" /D "_USRDLL" /FR"Debug/" /Fp"Debug/HED_CSP.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"E:\sp\project\Ukey\src\HED_CSP\HED_CryptoAPI.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\anshj\LOCALS~1\Temp\RSP173.tmp" 
+Creating temporary file "C:\DOCUME~1\anshj\LOCALS~1\Temp\RSP174.tmp" with contents
+[
+/nologo /subsystem:windows /dll /incremental:yes /pdb:"Debug/HED_CSP.pdb" /debug /machine:I386 /def:".\HED_CSP.def" /out:"C:\WINDOWS\system32\HED_CSP.dll" /implib:"Debug/HED_CSP.lib" /pdbtype:sept 
+.\Debug\Autoreg.obj
+.\Debug\des.obj
+.\Debug\HED_CryptoAPI.obj
+.\Debug\HED_CSP.obj
+.\Debug\rc2.obj
+.\Debug\StdAfx.obj
+.\Debug\HED_CSP.res
+.\HDIFD20B.lib
+.\libeay32.lib
+.\UKey.lib
+]
+Creating command line "link.exe @C:\DOCUME~1\anshj\LOCALS~1\Temp\RSP174.tmp"
+<h3>Output Window</h3>
+Compiling...
+HED_CryptoAPI.cpp
+E:\sp\project\Ukey\src\HED_CSP\HED_CryptoAPI.cpp(115) : warning C4018: '<' : signed/unsigned mismatch
+E:\sp\project\Ukey\src\HED_CSP\HED_CryptoAPI.cpp(1297) : warning C4018: '<' : signed/unsigned mismatch
+E:\sp\project\Ukey\src\HED_CSP\HED_CryptoAPI.cpp(1254) : warning C4101: 'k' : unreferenced local variable
+E:\sp\project\Ukey\src\HED_CSP\HED_CryptoAPI.cpp(1258) : warning C4101: 'privatekey' : unreferenced local variable
+E:\sp\project\Ukey\src\HED_CSP\HED_CryptoAPI.cpp(1382) : warning C4101: 'publickey' : unreferenced local variable
+E:\sp\project\Ukey\src\HED_CSP\HED_CryptoAPI.cpp(1383) : warning C4101: 'privatekey' : unreferenced local variable
+E:\sp\project\Ukey\src\HED_CSP\HED_CryptoAPI.cpp(1603) : warning C4018: '<' : signed/unsigned mismatch
+E:\sp\project\Ukey\src\HED_CSP\HED_CryptoAPI.cpp(1608) : warning C4018: '<' : signed/unsigned mismatch
+E:\sp\project\Ukey\src\HED_CSP\HED_CryptoAPI.cpp(1625) : warning C4018: '<' : signed/unsigned mismatch
+E:\sp\project\Ukey\src\HED_CSP\HED_CryptoAPI.cpp(1633) : warning C4018: '<' : signed/unsigned mismatch
+E:\sp\project\Ukey\src\HED_CSP\HED_CryptoAPI.cpp(1635) : warning C4018: '<' : signed/unsigned mismatch
+E:\sp\project\Ukey\src\HED_CSP\HED_CryptoAPI.cpp(1542) : warning C4101: 'k' : unreferenced local variable
+E:\sp\project\Ukey\src\HED_CSP\HED_CryptoAPI.cpp(1977) : warning C4018: '>' : signed/unsigned mismatch
+E:\sp\project\Ukey\src\HED_CSP\HED_CryptoAPI.cpp(2994) : warning C4101: 'InData' : unreferenced local variable
+E:\sp\project\Ukey\src\HED_CSP\HED_CryptoAPI.cpp(2996) : warning C4101: 'i' : unreferenced local variable
+E:\sp\project\Ukey\src\HED_CSP\HED_CryptoAPI.cpp(3074) : warning C4244: 'argument' : conversion from 'unsigned long' to 'const short', possible loss of data
+Linking...
+Creating command line "bscmake.exe /nologo /o"Debug/HED_CSP.bsc"  .\Debug\StdAfx.sbr .\Debug\Autoreg.sbr .\Debug\des.sbr .\Debug\HED_CryptoAPI.sbr .\Debug\HED_CSP.sbr .\Debug\rc2.sbr"
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+HED_CSP.dll - 0 error(s), 16 warning(s)
+</pre>
+</body>
+</html>
