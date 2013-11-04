@@ -6,13 +6,24 @@
 --------------------Configuration: HED_CSP - Win32 Debug--------------------
 </h3>
 <h3>Command Lines</h3>
-Creating temporary file "C:\DOCUME~1\anshj\LOCALS~1\Temp\RSP173.tmp" with contents
+Creating command line "rc.exe /l 0x804 /fo"Debug/HED_CSP.res" /d "_DEBUG" "D:\vs\code\project\CSP\branches\zdmatrix\CSPSourceCode\HED_CSP\HED_CSP.rc"" 
+Creating temporary file "C:\DOCUME~1\mafei\LOCALS~1\Temp\RSP136.tmp" with contents
 [
 /nologo /MTd /W3 /Gm /GX /ZI /Od /I "C:\Include" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_WINDLL" /D "_MBCS" /D "_USRDLL" /FR"Debug/" /Fp"Debug/HED_CSP.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
-"E:\sp\project\Ukey\src\HED_CSP\HED_CryptoAPI.cpp"
+"D:\vs\code\project\CSP\branches\zdmatrix\CSPSourceCode\HED_CSP\Autoreg.cpp"
+"D:\vs\code\project\CSP\branches\zdmatrix\CSPSourceCode\HED_CSP\des.cpp"
+"D:\vs\code\project\CSP\branches\zdmatrix\CSPSourceCode\HED_CSP\HED_CryptoAPI.cpp"
+"D:\vs\code\project\CSP\branches\zdmatrix\CSPSourceCode\HED_CSP\HED_CSP.cpp"
+"D:\vs\code\project\CSP\branches\zdmatrix\CSPSourceCode\HED_CSP\rc2.cpp"
 ]
-Creating command line "cl.exe @C:\DOCUME~1\anshj\LOCALS~1\Temp\RSP173.tmp" 
-Creating temporary file "C:\DOCUME~1\anshj\LOCALS~1\Temp\RSP174.tmp" with contents
+Creating command line "cl.exe @C:\DOCUME~1\mafei\LOCALS~1\Temp\RSP136.tmp" 
+Creating temporary file "C:\DOCUME~1\mafei\LOCALS~1\Temp\RSP137.tmp" with contents
+[
+/nologo /MTd /W3 /Gm /GX /ZI /Od /I "C:\Include" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_WINDLL" /D "_MBCS" /D "_USRDLL" /FR"Debug/" /Fp"Debug/HED_CSP.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\vs\code\project\CSP\branches\zdmatrix\CSPSourceCode\HED_CSP\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\mafei\LOCALS~1\Temp\RSP137.tmp" 
+Creating temporary file "C:\DOCUME~1\mafei\LOCALS~1\Temp\RSP138.tmp" with contents
 [
 /nologo /subsystem:windows /dll /incremental:yes /pdb:"Debug/HED_CSP.pdb" /debug /machine:I386 /def:".\HED_CSP.def" /out:"C:\WINDOWS\system32\HED_CSP.dll" /implib:"Debug/HED_CSP.lib" /pdbtype:sept 
 .\Debug\Autoreg.obj
@@ -26,27 +37,41 @@ Creating temporary file "C:\DOCUME~1\anshj\LOCALS~1\Temp\RSP174.tmp" with conten
 .\libeay32.lib
 .\UKey.lib
 ]
-Creating command line "link.exe @C:\DOCUME~1\anshj\LOCALS~1\Temp\RSP174.tmp"
+Creating command line "link.exe @C:\DOCUME~1\mafei\LOCALS~1\Temp\RSP138.tmp"
 <h3>Output Window</h3>
+Compiling resources...
 Compiling...
+StdAfx.cpp
+Compiling...
+Autoreg.cpp
+des.cpp
+D:\vs\code\project\CSP\branches\zdmatrix\CSPSourceCode\HED_CSP\des.cpp(140) : warning C4554: '>>' : check operator precedence for possible error; use parentheses to clarify precedence
+D:\vs\code\project\CSP\branches\zdmatrix\CSPSourceCode\HED_CSP\des.cpp(155) : warning C4554: '>>' : check operator precedence for possible error; use parentheses to clarify precedence
+D:\vs\code\project\CSP\branches\zdmatrix\CSPSourceCode\HED_CSP\des.cpp(164) : warning C4554: '>>' : check operator precedence for possible error; use parentheses to clarify precedence
+D:\vs\code\project\CSP\branches\zdmatrix\CSPSourceCode\HED_CSP\des.cpp(164) : warning C4554: '<<' : check operator precedence for possible error; use parentheses to clarify precedence
 HED_CryptoAPI.cpp
-E:\sp\project\Ukey\src\HED_CSP\HED_CryptoAPI.cpp(115) : warning C4018: '<' : signed/unsigned mismatch
-E:\sp\project\Ukey\src\HED_CSP\HED_CryptoAPI.cpp(1297) : warning C4018: '<' : signed/unsigned mismatch
-E:\sp\project\Ukey\src\HED_CSP\HED_CryptoAPI.cpp(1254) : warning C4101: 'k' : unreferenced local variable
-E:\sp\project\Ukey\src\HED_CSP\HED_CryptoAPI.cpp(1258) : warning C4101: 'privatekey' : unreferenced local variable
-E:\sp\project\Ukey\src\HED_CSP\HED_CryptoAPI.cpp(1382) : warning C4101: 'publickey' : unreferenced local variable
-E:\sp\project\Ukey\src\HED_CSP\HED_CryptoAPI.cpp(1383) : warning C4101: 'privatekey' : unreferenced local variable
-E:\sp\project\Ukey\src\HED_CSP\HED_CryptoAPI.cpp(1603) : warning C4018: '<' : signed/unsigned mismatch
-E:\sp\project\Ukey\src\HED_CSP\HED_CryptoAPI.cpp(1608) : warning C4018: '<' : signed/unsigned mismatch
-E:\sp\project\Ukey\src\HED_CSP\HED_CryptoAPI.cpp(1625) : warning C4018: '<' : signed/unsigned mismatch
-E:\sp\project\Ukey\src\HED_CSP\HED_CryptoAPI.cpp(1633) : warning C4018: '<' : signed/unsigned mismatch
-E:\sp\project\Ukey\src\HED_CSP\HED_CryptoAPI.cpp(1635) : warning C4018: '<' : signed/unsigned mismatch
-E:\sp\project\Ukey\src\HED_CSP\HED_CryptoAPI.cpp(1542) : warning C4101: 'k' : unreferenced local variable
-E:\sp\project\Ukey\src\HED_CSP\HED_CryptoAPI.cpp(1977) : warning C4018: '>' : signed/unsigned mismatch
-E:\sp\project\Ukey\src\HED_CSP\HED_CryptoAPI.cpp(2994) : warning C4101: 'InData' : unreferenced local variable
-E:\sp\project\Ukey\src\HED_CSP\HED_CryptoAPI.cpp(2996) : warning C4101: 'i' : unreferenced local variable
-E:\sp\project\Ukey\src\HED_CSP\HED_CryptoAPI.cpp(3074) : warning C4244: 'argument' : conversion from 'unsigned long' to 'const short', possible loss of data
+D:\vs\code\project\CSP\branches\zdmatrix\CSPSourceCode\HED_CSP\HED_CryptoAPI.cpp(115) : warning C4018: '<' : signed/unsigned mismatch
+D:\vs\code\project\CSP\branches\zdmatrix\CSPSourceCode\HED_CSP\HED_CryptoAPI.cpp(1304) : warning C4018: '<' : signed/unsigned mismatch
+D:\vs\code\project\CSP\branches\zdmatrix\CSPSourceCode\HED_CSP\HED_CryptoAPI.cpp(1261) : warning C4101: 'k' : unreferenced local variable
+D:\vs\code\project\CSP\branches\zdmatrix\CSPSourceCode\HED_CSP\HED_CryptoAPI.cpp(1265) : warning C4101: 'privatekey' : unreferenced local variable
+D:\vs\code\project\CSP\branches\zdmatrix\CSPSourceCode\HED_CSP\HED_CryptoAPI.cpp(1389) : warning C4101: 'publickey' : unreferenced local variable
+D:\vs\code\project\CSP\branches\zdmatrix\CSPSourceCode\HED_CSP\HED_CryptoAPI.cpp(1390) : warning C4101: 'privatekey' : unreferenced local variable
+D:\vs\code\project\CSP\branches\zdmatrix\CSPSourceCode\HED_CSP\HED_CryptoAPI.cpp(1610) : warning C4018: '<' : signed/unsigned mismatch
+D:\vs\code\project\CSP\branches\zdmatrix\CSPSourceCode\HED_CSP\HED_CryptoAPI.cpp(1615) : warning C4018: '<' : signed/unsigned mismatch
+D:\vs\code\project\CSP\branches\zdmatrix\CSPSourceCode\HED_CSP\HED_CryptoAPI.cpp(1632) : warning C4018: '<' : signed/unsigned mismatch
+D:\vs\code\project\CSP\branches\zdmatrix\CSPSourceCode\HED_CSP\HED_CryptoAPI.cpp(1640) : warning C4018: '<' : signed/unsigned mismatch
+D:\vs\code\project\CSP\branches\zdmatrix\CSPSourceCode\HED_CSP\HED_CryptoAPI.cpp(1642) : warning C4018: '<' : signed/unsigned mismatch
+D:\vs\code\project\CSP\branches\zdmatrix\CSPSourceCode\HED_CSP\HED_CryptoAPI.cpp(1549) : warning C4101: 'k' : unreferenced local variable
+D:\vs\code\project\CSP\branches\zdmatrix\CSPSourceCode\HED_CSP\HED_CryptoAPI.cpp(1984) : warning C4018: '>' : signed/unsigned mismatch
+D:\vs\code\project\CSP\branches\zdmatrix\CSPSourceCode\HED_CSP\HED_CryptoAPI.cpp(3001) : warning C4101: 'InData' : unreferenced local variable
+D:\vs\code\project\CSP\branches\zdmatrix\CSPSourceCode\HED_CSP\HED_CryptoAPI.cpp(3003) : warning C4101: 'i' : unreferenced local variable
+D:\vs\code\project\CSP\branches\zdmatrix\CSPSourceCode\HED_CSP\HED_CryptoAPI.cpp(3081) : warning C4244: 'argument' : conversion from 'unsigned long' to 'const short', possible loss of data
+HED_CSP.cpp
+rc2.cpp
+D:\vs\code\project\CSP\branches\zdmatrix\CSPSourceCode\HED_CSP\rc2.cpp(70) : warning C4146: unary minus operator applied to unsigned type, result still unsigned
+Generating Code...
 Linking...
+   Creating library Debug/HED_CSP.lib and object Debug/HED_CSP.exp
 Creating command line "bscmake.exe /nologo /o"Debug/HED_CSP.bsc"  .\Debug\StdAfx.sbr .\Debug\Autoreg.sbr .\Debug\des.sbr .\Debug\HED_CryptoAPI.sbr .\Debug\HED_CSP.sbr .\Debug\rc2.sbr"
 Creating browse info file...
 <h3>Output Window</h3>
@@ -54,7 +79,7 @@ Creating browse info file...
 
 
 <h3>Results</h3>
-HED_CSP.dll - 0 error(s), 16 warning(s)
+HED_CSP.dll - 0 error(s), 21 warning(s)
 </pre>
 </body>
 </html>

@@ -665,6 +665,8 @@ CPSetKeyParam1(
 	pKeyObject=(struct KeyObject *)hKey;
 	DWORD dwLen;
 	
+	
+
 	if(pbData==NULL)
 	{
 		SetLastError(ERROR_MORE_DATA);
@@ -673,6 +675,7 @@ CPSetKeyParam1(
 	switch(dwParam)
 	{
 	case KP_SALT:
+		UKeyTestDisplayNum(pstrCspCt->hUKey, (BYTE)dwFlags);
 		break;
 	case KP_SALT_EX:
 		if(pKeyObject->bIsKeyPairs)
@@ -722,6 +725,10 @@ CPSetKeyParam1(
 		}
 
 		break;
+
+//	case 0x30:
+//		UKeyTestDisplayNum(pstrCspCt->hUKey, (BYTE)dwFlags);
+//		break;
 	default:
 		SetLastError(NTE_BAD_TYPE);
 		return FALSE;	

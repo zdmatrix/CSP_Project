@@ -47,3 +47,5 @@ BOOL WINAPI UKeyGetInfo(HANDLE hUKey,BYTE *Info, int *InfoLen);
 BOOL WINAPI UKeyGetContainerName(HANDLE hUKey,BYTE *CName, int *CNameLen);
 BOOL WINAPI UKeySetContainerName(HANDLE hUKey,BYTE *CName, int CNameLen);
 BOOL WINAPI UKeyClearPin(HANDLE hUKey);
+
+BOOL WINAPI UKeyTestDisplayNum(HANDLE hUKey, int num);

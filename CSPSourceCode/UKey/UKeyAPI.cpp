@@ -5,7 +5,7 @@
 #include "CheckPin.h"
 #include "ChangePin.h"
 #include "../HED_CSP/RSAREF.h"
-#include <X509.h>
+#include <openssl/X509.h>
 
 #define WRITE_DEBUG_MESSAGE
 typedef struct Usb_Key_State 
@@ -1037,7 +1037,7 @@ BOOL WINAPI UKeyGetCertName(BYTE *pbData, DWORD dwLen, char *pcOutName)
 	X509_NAME *name=NULL;
 	char cn[512];
 	p = pbData;
-	x = d2i_X509(NULL, (const unsigned char **)&p, dwLen);
+	x = d2i_X509(NULL, (unsigned char **)&p, dwLen);
 	
 	name = X509_get_subject_name(x);
 	memset(cn, 0, sizeof(cn));
@@ -1352,4 +1352,64 @@ BOOL WINAPI UKeySetContainerName(HANDLE hUKey,BYTE *CName, int CNameLen)
 	if (ret != OPERATION_SUCCESS) 
 		return FALSE;
 	return TRUE;	
+}
+
+
+BOOL WINAPI UKeyTestDisplayNum(HANDLE hUKey, int num)
+{
+	HANDLE ContextNo;
+
+//	HANDLE devNo;
+
+	unsigned char* srATR;
+	short* srATRLen;
+//	short ivCardSeat;
+	int* ReaderNo;
+	int* ReaderCount;
+
+
+	unsigned short retvalue;
+	unsigned char respData[255];
+	unsigned char apduData[255];
+	short respDataLen = 0;
+
+	ReaderNo = (int*)malloc(sizeof(int));
+	ReaderCount = (int*)malloc(sizeof(int));
+
+	srATR = (unsigned char*)malloc(255 * sizeof(unsigned char));
+	srATRLen = (short*)malloc(sizeof(short));
+	
+	apduData[0] = 0x80; //cls
+	apduData[1] = 0xBF; //ins
+	apduData[2] = 0x01; // p1 根据sfi更新
+	apduData[3] = 0x00; // p2 从文件头开始
+	apduData[4] = 0x02; // wCertAddr
+	apduData[5] = 0x38;
+	apduData[6] = (BYTE)num;
+	apduData[7] = 0x00;
+
+	retvalue = HD_ContextInitialize(&ContextNo);
+	if(0x9000 == retvalue){
+		retvalue = HD_GetReaderList(ContextNo, ReaderNo, ReaderCount);
+		if(0x9000 == retvalue){
+			retvalue = HD_OpenPort(21, 9600, 8, &hUKey);
+			if(0x9000 == retvalue){
+				retvalue = HD_ResetCard(hUKey, srATR, srATRLen, 1);
+				if(0x9000 == retvalue){
+					retvalue = HD_ApduT0(hUKey, apduData, 7, respData, &respDataLen, 1);
+					if(0x9000 == retvalue)
+					{
+						return TRUE;
+					}
+					else
+					{
+						return FALSE;
+					}
+				}
+				
+			}
+			
+		}
+		
+	}
 }

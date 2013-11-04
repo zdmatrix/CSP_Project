@@ -28,7 +28,7 @@ ContextNo	返回的容器号
 返回值
 函数返回0x9000表示正确，此时devNo有效；其它值表示出错，错误信息见附后的“错误信息表”。
 ***********************************************************************************************/
-//HDIFD20B_API unsigned short CCONV HD_ContextInitialize(HANDLE *ContextNo);
+HDIFD20B_API unsigned short CCONV HD_ContextInitialize(HANDLE *ContextNo);
 
 /**********************************************************************************************
 2.HD_ContextRelease
@@ -43,7 +43,7 @@ ContextNo			容器号
 返回值
 函数返回0x9000表示正确，此时devNo有效；其它值表示出错，错误信息见附后的“错误信息表”。
 ***********************************************************************************************/
-//HDIFD20B_API unsigned short CCONV HD_ContextRelease(HANDLE ContextNo);
+HDIFD20B_API unsigned short CCONV HD_ContextRelease(HANDLE ContextNo);
 
 /**********************************************************************************************
 3.HD_GetReaderList
@@ -62,7 +62,7 @@ ReaderCount		返回值，设备数量。
 返回值
 函数返回0x9000表示正确，此时devNo有效；其它值表示出错，错误信息见附后的“错误信息表”。
 ***********************************************************************************************/
-//HDIFD20B_API unsigned short CCONV HD_GetReaderList(HANDLE ContextNo, int *ResponseBuffer , int *ResponseLength);
+HDIFD20B_API unsigned short CCONV HD_GetReaderList(HANDLE ContextNo, int *ResponseBuffer , int *ResponseLength);
 
 /**********************************************************************************************
 4.HD_OpenPort

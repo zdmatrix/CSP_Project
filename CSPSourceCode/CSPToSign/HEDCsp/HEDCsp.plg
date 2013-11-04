@@ -6,13 +6,22 @@
 --------------------Configuration: HEDCsp - Win32 Release--------------------
 </h3>
 <h3>Command Lines</h3>
-Creating temporary file "C:\DOCUME~1\anshj\LOCALS~1\Temp\RSP57.tmp" with contents
+Creating command line "rc.exe /l 0x804 /fo"Release/HEDCsp.res" /d "NDEBUG" /d "_AFXDLL" "D:\vs\code\project\CSP\branches\zdmatrix\CSPSourceCode\CSPToSign\HEDCsp\HEDCsp.rc"" 
+Creating temporary file "C:\DOCUME~1\mafei\LOCALS~1\Temp\RSPFB.tmp" with contents
 [
 /nologo /MD /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_MBCS" /D "_USRDLL" /Fp"Release/HEDCsp.pch" /Yu"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
-"E:\projects\UKey\csp\HEDCsp\csp.cpp"
+"D:\vs\code\project\CSP\branches\zdmatrix\CSPSourceCode\CSPToSign\HEDCsp\AutoReg.cpp"
+"D:\vs\code\project\CSP\branches\zdmatrix\CSPSourceCode\CSPToSign\HEDCsp\csp.cpp"
+"D:\vs\code\project\CSP\branches\zdmatrix\CSPSourceCode\CSPToSign\HEDCsp\HEDCsp.cpp"
 ]
-Creating command line "cl.exe @C:\DOCUME~1\anshj\LOCALS~1\Temp\RSP57.tmp" 
-Creating temporary file "C:\DOCUME~1\anshj\LOCALS~1\Temp\RSP58.tmp" with contents
+Creating command line "cl.exe @C:\DOCUME~1\mafei\LOCALS~1\Temp\RSPFB.tmp" 
+Creating temporary file "C:\DOCUME~1\mafei\LOCALS~1\Temp\RSPFC.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_MBCS" /D "_USRDLL" /Fp"Release/HEDCsp.pch" /Yc"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"D:\vs\code\project\CSP\branches\zdmatrix\CSPSourceCode\CSPToSign\HEDCsp\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\mafei\LOCALS~1\Temp\RSPFC.tmp" 
+Creating temporary file "C:\DOCUME~1\mafei\LOCALS~1\Temp\RSPFD.tmp" with contents
 [
 /nologo /subsystem:windows /dll /incremental:no /pdb:"Release/HEDCsp.pdb" /machine:I386 /def:".\HEDCsp.def" /out:"Release/HEDCsp.dll" /implib:"Release/HEDCsp.lib" 
 .\Release\AutoReg.obj
@@ -22,18 +31,23 @@ Creating temporary file "C:\DOCUME~1\anshj\LOCALS~1\Temp\RSP58.tmp" with content
 .\Release\HEDCsp.res
 .\HED_CSP.lib
 ]
-Creating command line "link.exe @C:\DOCUME~1\anshj\LOCALS~1\Temp\RSP58.tmp"
+Creating command line "link.exe @C:\DOCUME~1\mafei\LOCALS~1\Temp\RSPFD.tmp"
 <h3>Output Window</h3>
+Compiling resources...
 Compiling...
+StdAfx.cpp
+Compiling...
+AutoReg.cpp
 csp.cpp
-E:\projects\UKey\csp\HEDCsp\csp.cpp(15) : warning C4652: compiler option 'Generate Browser Info' inconsistent with precompiled header; current command-line option will override that defined in the precompiled header
+HEDCsp.cpp
+Generating Code...
 Linking...
    Creating library Release/HEDCsp.lib and object Release/HEDCsp.exp
 
 
 
 <h3>Results</h3>
-HEDCsp.dll - 0 error(s), 1 warning(s)
+HEDCsp.dll - 0 error(s), 0 warning(s)
 </pre>
 </body>
 </html>

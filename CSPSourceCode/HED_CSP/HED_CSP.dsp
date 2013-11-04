@@ -95,7 +95,7 @@ SOURCE=.\Autoreg.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\..\projects\UKey\csp\wscsp\des.cpp
+SOURCE=.\des.cpp
 # End Source File
 # Begin Source File
 
@@ -115,7 +115,7 @@ SOURCE=.\HED_CSP.rc
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\..\projects\UKey\csp\wscsp\rc2.cpp
+SOURCE=.\rc2.cpp
 # End Source File
 # Begin Source File
 
