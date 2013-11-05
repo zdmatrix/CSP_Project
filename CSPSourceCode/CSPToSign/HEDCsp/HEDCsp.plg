@@ -6,32 +6,32 @@
 --------------------Configuration: HEDCsp - Win32 Release--------------------
 </h3>
 <h3>Command Lines</h3>
-Creating command line "rc.exe /l 0x804 /fo"Release/HEDCsp.res" /d "NDEBUG" /d "_AFXDLL" "D:\vs\code\project\CSP\branches\zdmatrix\CSPSourceCode\CSPToSign\HEDCsp\HEDCsp.rc"" 
-Creating temporary file "C:\DOCUME~1\mafei\LOCALS~1\Temp\RSPFB.tmp" with contents
+Creating command line "rc.exe /l 0x804 /fo"Release/HEDCsp.res" /d "NDEBUG" /d "_AFXDLL" "E:\code\c++\project\CSP_Project\branches\zdmatrix\CSPSourceCode\CSPToSign\HEDCsp\HEDCsp.rc"" 
+Creating temporary file "C:\DOCUME~1\zdmatrix\LOCALS~1\Temp\RSP5A.tmp" with contents
 [
 /nologo /MD /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_MBCS" /D "_USRDLL" /Fp"Release/HEDCsp.pch" /Yu"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
-"D:\vs\code\project\CSP\branches\zdmatrix\CSPSourceCode\CSPToSign\HEDCsp\AutoReg.cpp"
-"D:\vs\code\project\CSP\branches\zdmatrix\CSPSourceCode\CSPToSign\HEDCsp\csp.cpp"
-"D:\vs\code\project\CSP\branches\zdmatrix\CSPSourceCode\CSPToSign\HEDCsp\HEDCsp.cpp"
+"E:\code\c++\project\CSP_Project\branches\zdmatrix\CSPSourceCode\CSPToSign\HEDCsp\AutoReg.cpp"
+"E:\code\c++\project\CSP_Project\branches\zdmatrix\CSPSourceCode\CSPToSign\HEDCsp\csp.cpp"
+"E:\code\c++\project\CSP_Project\branches\zdmatrix\CSPSourceCode\CSPToSign\HEDCsp\HEDCsp.cpp"
 ]
-Creating command line "cl.exe @C:\DOCUME~1\mafei\LOCALS~1\Temp\RSPFB.tmp" 
-Creating temporary file "C:\DOCUME~1\mafei\LOCALS~1\Temp\RSPFC.tmp" with contents
+Creating command line "cl.exe @C:\DOCUME~1\zdmatrix\LOCALS~1\Temp\RSP5A.tmp" 
+Creating temporary file "C:\DOCUME~1\zdmatrix\LOCALS~1\Temp\RSP5B.tmp" with contents
 [
 /nologo /MD /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_MBCS" /D "_USRDLL" /Fp"Release/HEDCsp.pch" /Yc"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
-"D:\vs\code\project\CSP\branches\zdmatrix\CSPSourceCode\CSPToSign\HEDCsp\StdAfx.cpp"
+"E:\code\c++\project\CSP_Project\branches\zdmatrix\CSPSourceCode\CSPToSign\HEDCsp\StdAfx.cpp"
 ]
-Creating command line "cl.exe @C:\DOCUME~1\mafei\LOCALS~1\Temp\RSPFC.tmp" 
-Creating temporary file "C:\DOCUME~1\mafei\LOCALS~1\Temp\RSPFD.tmp" with contents
+Creating command line "cl.exe @C:\DOCUME~1\zdmatrix\LOCALS~1\Temp\RSP5B.tmp" 
+Creating temporary file "C:\DOCUME~1\zdmatrix\LOCALS~1\Temp\RSP5C.tmp" with contents
 [
 /nologo /subsystem:windows /dll /incremental:no /pdb:"Release/HEDCsp.pdb" /machine:I386 /def:".\HEDCsp.def" /out:"Release/HEDCsp.dll" /implib:"Release/HEDCsp.lib" 
-.\Release\AutoReg.obj
-.\Release\csp.obj
-.\Release\HEDCsp.obj
-.\Release\StdAfx.obj
-.\Release\HEDCsp.res
-.\HED_CSP.lib
+".\Release\AutoReg.obj"
+".\Release\csp.obj"
+".\Release\HEDCsp.obj"
+".\Release\StdAfx.obj"
+".\Release\HEDCsp.res"
+".\HED_CSP.lib"
 ]
-Creating command line "link.exe @C:\DOCUME~1\mafei\LOCALS~1\Temp\RSPFD.tmp"
+Creating command line "link.exe @C:\DOCUME~1\zdmatrix\LOCALS~1\Temp\RSP5C.tmp"
 <h3>Output Window</h3>
 Compiling resources...
 Compiling...

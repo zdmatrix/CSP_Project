@@ -17,7 +17,7 @@ int main(int argc, char* argv[])
 	hKey = (HCRYPTKEY)malloc(sizeof(HCRYPTKEY));
 	dwParam = KP_SALT;
 	pbData = (BYTE*)malloc(sizeof(BYTE));
-	dwFlags = 0x36;
+	dwFlags = 0x35;
 
 	CPSetKeyParam(hProv, hKey, dwParam, pbData, dwFlags);
 	printf("Hello World!\n");
