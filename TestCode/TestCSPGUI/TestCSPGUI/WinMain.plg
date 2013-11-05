@@ -1,0 +1,43 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: WinMain - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\zdmatrix\LOCALS~1\Temp\RSP385.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /FR"Debug/" /Fp"Debug/WinMain.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"Z:\E\work\project\C++\project\CSP_Project\branches\zdmatrix\TestCode\TestCSPGUI\TestCSPGUI\WinMain.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\zdmatrix\LOCALS~1\Temp\RSP385.tmp" 
+Creating temporary file "C:\DOCUME~1\zdmatrix\LOCALS~1\Temp\RSP386.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib HID.lib Setupapi.lib comctl32.lib winscard.lib HEDCsp.lib /nologo /subsystem:windows /incremental:yes /pdb:"Debug/WinMain.pdb" /debug /machine:I386 /out:"Debug/WinMain.exe" /pdbtype:sept 
+".\Debug\CallCSP.obj"
+".\Debug\Dialog.obj"
+".\Debug\Global.obj"
+".\Debug\TabCtrl.obj"
+".\Debug\WinMain.obj"
+".\Debug\Win32SDK.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\zdmatrix\LOCALS~1\Temp\RSP386.tmp"
+<h3>Output Window</h3>
+Compiling...
+WinMain.c
+Z:\E\work\project\C++\project\CSP_Project\branches\zdmatrix\TestCode\TestCSPGUI\TestCSPGUI\WinMain.c(47) : warning C4013: 'Dialog_Init' undefined; assuming extern returning int
+Z:\E\work\project\C++\project\CSP_Project\branches\zdmatrix\TestCode\TestCSPGUI\TestCSPGUI\WinMain.c(47) : warning C4047: '=' : 'struct HWND__ *' differs in levels of indirection from 'int '
+Z:\E\work\project\C++\project\CSP_Project\branches\zdmatrix\TestCode\TestCSPGUI\TestCSPGUI\WinMain.c(51) : warning C4700: local variable 'hIcon' used without having been initialized
+Linking...
+Creating command line "bscmake.exe /nologo /o"Debug/WinMain.bsc"  ".\Debug\CallCSP.sbr" ".\Debug\Dialog.sbr" ".\Debug\Global.sbr" ".\Debug\TabCtrl.sbr" ".\Debug\WinMain.sbr""
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+WinMain.exe - 0 error(s), 3 warning(s)
+</pre>
+</body>
+</html>
