@@ -92,23 +92,7 @@ LINK32=link.exe
 # PROP Default_Filter "cpp;c;cxx;rc;def;r;odl;idl;hpj;bat"
 # Begin Source File
 
-SOURCE=.\APDU.c
-# End Source File
-# Begin Source File
-
 SOURCE=.\AppCash.c
-# End Source File
-# Begin Source File
-
-SOURCE=.\AppKeyCert.c
-# End Source File
-# Begin Source File
-
-SOURCE=.\AppUKey2.c
-# End Source File
-# Begin Source File
-
-SOURCE=.\Devices.c
 # End Source File
 # Begin Source File
 
@@ -132,23 +116,7 @@ SOURCE=.\WinMain.c
 # PROP Default_Filter "h;hpp;hxx;hm;inl"
 # Begin Source File
 
-SOURCE=.\APDU.h
-# End Source File
-# Begin Source File
-
 SOURCE=.\AppCash.h
-# End Source File
-# Begin Source File
-
-SOURCE=.\AppKeyCert.h
-# End Source File
-# Begin Source File
-
-SOURCE=.\AppUKey2.h
-# End Source File
-# Begin Source File
-
-SOURCE=.\Devices.h
 # End Source File
 # Begin Source File
 
@@ -157,6 +125,10 @@ SOURCE=.\Dialog.h
 # Begin Source File
 
 SOURCE=.\Global.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\resource.h
 # End Source File
 # Begin Source File
 

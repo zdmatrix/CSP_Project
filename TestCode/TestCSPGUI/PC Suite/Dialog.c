@@ -18,10 +18,7 @@
 #include <commctrl.h>
 #include "resource.h"
 #include "Global.h"
-#include "Devices.h"
-#include "AppKeyCert.h"
-#include "AppCash.h"
-#include "AppUKey2.h"
+
 
 #include "Dialog.h"
 
@@ -36,14 +33,12 @@
 
 //*************************************************************************
 // 内部全局变量
-const static CHAR gsTitle[] = "APDU Tools";
+const static CHAR gsTitle[] = "HED_CSP Test Tools";
 
-static LPSTR gTabNames[] = { "公私钥/证书", "电子现金", "二代Ukey", "动态口令", "行业数据", 0 };
-static LPSTR gDlgNames[] = { MAKEINTRESOURCE(IDD_DIALOG_PAGE1),
+static LPSTR gTabNames[] = { "HED_CSP调用测试", 0 };
+static LPSTR gDlgNames[] = { 
 							 MAKEINTRESOURCE(IDD_DIALOG_PAGE2),
-							 MAKEINTRESOURCE(IDD_DIALOG_PAGE3),
-							 MAKEINTRESOURCE(IDD_DIALOG_PAGE4),
-							 MAKEINTRESOURCE(IDD_DIALOG_PAGE5),
+							 
 							 0 };
 
 
@@ -73,10 +68,6 @@ LRESULT Dialog_OnInitDialog ( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam
 	// 创建模块链表
 	GNODEOP.Create ( &lpUserData->lpModNode );
 
-	// 初始化硬件检测并添加到模块链表中
-	if ( (lpVoid = GDEVOP.Init ( hWnd )) == NULL )
-		return -1;
-	GNODEOP.Append ( lpUserData->lpModNode, lpVoid, APPMOD_DEVICE );
 
 	// 初始化Tab控件
 	New_TabControl ( &lpUserData->sTabCtrl,			// address of TabControl struct
@@ -99,11 +90,7 @@ static void Dialog_OnClose ( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam 
 	LPUSERDATA	lpUserData = (LPUSERDATA)GetWindowLong ( hWnd, GWL_USERDATA );
 	LPDULNODE	lpDuLNode = NULL;
 
-	// 释放硬件设备空间
-	lpDuLNode = GNODEOP.Find ( lpUserData->lpModNode, APPMOD_DEVICE );
-	if ( lpDuLNode )
-		GDEVOP.Destroy ( &lpDuLNode->lpData );
-
+	
 	// 释放TAB空间相关
 	TabControl_Destroy ( &lpUserData->sTabCtrl );
 
@@ -133,13 +120,7 @@ static BOOL Dialog_OnNotify ( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam
 		{
 			lpUserData->sTabCtrl.OnSelChanged();	// 原始语句
 			lpUserData->nTabSelect = SendMessage ( lpUserData->sTabCtrl.hTab, TCM_GETCURSEL, 0, 0 );
-
-			// 切换TAB后
-			lpDuLNode = GNODEOP.Find ( lpUserData->lpModNode, APPMOD_DEVICE );
-			if ( (lpUserData->nTabSelect == 1) && GDEVOP.GetNumber ( lpDuLNode->lpData ) )
-				AppCash_GetBalance ( lpUserData );
-			else if ( (lpUserData->nTabSelect == 2) && GDEVOP.GetNumber ( lpDuLNode->lpData ) )
-				AppUKey2_GetBalance ( lpUserData );
+			
 		}
 	}
 
@@ -147,65 +128,7 @@ static BOOL Dialog_OnNotify ( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam
 	return FALSE;
 }
 
-//*************************************************************************
-// 函数: Dialog_OnDevUnmount
-// 功能: 卸载设备
-//*************************************************************************
-LRESULT Dialog_OnDevUnmount ( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam )
-{
-	LPUSERDATA	lpUserData = (LPUSERDATA)GetWindowLong ( hWnd, GWL_USERDATA );
-	LPDULNODE	lpDuLNode = NULL;
 
-	lpDuLNode = GNODEOP.Find ( lpUserData->lpModNode, APPMOD_DEVICE );
-	SendMessage ( lpUserData->hComboNewDev, CB_DELETESTRING, GDEVOP.GetChange ( lpDuLNode->lpData ), 0 );
-	SendMessage ( lpUserData->hComboNewDev, CB_SETCURSEL, GDEVOP.GetIndex ( lpDuLNode->lpData ), 0 );
-
-	return 0;
-}
-
-//*************************************************************************
-// 函数: Dialog_OnDevMount
-// 功能: 挂接新设备
-//*************************************************************************
-LRESULT Dialog_OnDevMount ( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam )
-{
-	LPUSERDATA	lpUserData = (LPUSERDATA)GetWindowLong ( hWnd, GWL_USERDATA );
-	PCHAR		pString = NULL;
-	LPDULNODE	lpDuLNode = NULL;
-	LRESULT		nChange;
-
-	lpDuLNode = GNODEOP.Find ( lpUserData->lpModNode, APPMOD_DEVICE );
-	nChange = GDEVOP.GetChange ( lpDuLNode->lpData );
-	if ( nChange == -1 )
-		return -1;
-	pString = GDEVOP.GetName ( lpDuLNode->lpData, nChange );
-	if ( !pString ) return 0;
-
-	SendMessage ( lpUserData->hComboNewDev, CB_ADDSTRING, 0, (LPARAM)pString );
-	SendMessage ( lpUserData->hComboNewDev, CB_SETCURSEL, GDEVOP.GetIndex ( lpDuLNode->lpData ), 0 ) ;
-	MacroFree ( pString );
-
-	return 0;
-}
-
-//*************************************************************************
-// 函数: Dialog_OnDeviceChange
-// 功能: 挂接新设备
-//*************************************************************************
-LRESULT Dialog_OnDeviceChange ( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam )
-{
-	LPUSERDATA	lpUserData = (LPUSERDATA)GetWindowLong ( hWnd, GWL_USERDATA );
-	LPDULNODE	lpDuLNode = NULL;
-	DEVOP		sDevOp = { NULL };
-
-	lpDuLNode = GNODEOP.Find ( lpUserData->lpModNode, APPMOD_DEVICE );
-	if ( !lpDuLNode )
-		return 0;
-
-	GDEVOP.OnChange ( lpDuLNode->lpData, wParam, lParam );
-
-	return 0;
-}
 
 //*************************************************************************
 // 函数: Dialog_OnPaint
@@ -220,9 +143,6 @@ LRESULT Dialog_OnPaint ( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam )
 		lpUserData = (LPUSERDATA)GetWindowLong ( GetParent ( hWnd ), GWL_USERDATA );
 		if ( !lpUserData ) return -1;
 	}
-
-	if ( hWnd == lpUserData->sTabCtrl.hTabPages[2] )
-		return AppUKey2_OnPaint ( lpUserData, hWnd );
 
 	return FALSE;
 }
@@ -242,11 +162,8 @@ LRESULT Dialog_OnCommand ( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam )
 	}
 
 	if ( lpUserData->nTabSelect == 0 )
-		AppKeyCert_OnCommand ( hWnd, uMsg, wParam, lParam );
-	else if ( lpUserData->nTabSelect == 1 )
 		AppCash_OnCommand ( hWnd, uMsg, wParam, lParam );
-	else if ( lpUserData->nTabSelect == 2 )
-		AppUKey2_OnCommand ( hWnd, uMsg, wParam, lParam );
+	
 
 	return 0;
 }
@@ -267,17 +184,6 @@ LRESULT Dialog_WndProc ( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam )
 		Dialog_OnNotify ( hWnd, uMsg, wParam, lParam );
 		return FALSE;
 
-	case WM_DEVICECHANGE:		// HID 类型设备插拔通知
-		Dialog_OnDeviceChange ( hWnd, uMsg, wParam, lParam );
-		return TRUE;
-
-	case WM_DEVICE_MOUNT:
-		Dialog_OnDevMount ( hWnd, uMsg, wParam, lParam );
-		return TRUE;
-
-	case WM_DEVICE_UNMOUNT:
-		Dialog_OnDevUnmount ( hWnd, uMsg, wParam, lParam );
-		return TRUE;
 
 	case WM_COMMAND:
 		Dialog_OnCommand ( hWnd, uMsg, wParam, lParam );
@@ -285,14 +191,6 @@ LRESULT Dialog_WndProc ( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam )
 		
 	case WM_PAINT:
 		return Dialog_OnPaint ( hWnd, uMsg, wParam, lParam );
-
-	case WM_UKEY2_SENDCARD:
-		AppUKey2_SendCard ( hWnd, uMsg, wParam, lParam );
-		break;
-		
-	case WM_UKEY2_WAITKEY:
-		AppUKey2_WaitKey ( hWnd, uMsg, wParam, lParam );
-		break;
 
 	case WM_CLOSE:
 		Dialog_OnClose ( hWnd, uMsg, wParam, lParam );
